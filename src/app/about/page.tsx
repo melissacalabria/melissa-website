@@ -27,8 +27,8 @@ export default function About() {
             blend of history and modern living.
           </p>
           <p>
-            With friendly residents and beautiful landscapes, it's the perfect
-            place to call home.
+            With friendly residents and beautiful landscapes, it&apos;s the
+            perfect place to call home.
           </p>
         </div>
       </div>
