@@ -46,14 +46,10 @@ export default function Home() {
           <div className="md:w-1/2 md:pl-12 mt-8 md:mt-0">
             <h2 className="text-4xl font-bold mb-4">Discover Our Heritage</h2>
             <p className="text-lg mb-4">
-              Melissa is a town rich in history and tradition, known for its
-              stunning vineyards and exquisite wine production. The name "Melissa"
-              derives from the Greek word for "honey," symbolizing our sweet
-              connection to both honey and wine.
+              Melissa is a town rich in history and tradition, known for its stunning vineyards and exquisite wine production. The name &quot;Melissa&quot; derives from the Greek word for &quot;honey,&quot; symbolizing our sweet connection to both honey and wine.
             </p>
             <p className="text-lg">
-              Join us in exploring the unique blend of ancient traditions and
-              modern living that defines Melissa.
+              Join us in exploring the unique blend of ancient traditions and modern living that defines Melissa.
             </p>
           </div>
         </div>

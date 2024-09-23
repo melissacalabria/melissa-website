@@ -4,6 +4,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -12,7 +13,13 @@ const Navbar = () => {
     <nav className="bg-background shadow-md sticky top-0 z-50 transition-colors duration-300">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2">
-          <img src="/images/Hero.jpg" alt="Logo" className="h-8 w-8 rounded-full" />
+          <Image
+            src="/images/Hero.jpg"
+            alt="Logo"
+            width={32}
+            height={32}
+            className="h-8 w-8 rounded-full"
+          />
           <span className="text-2xl font-bold text-primary">MyTown</span>
         </Link>
         <div className="hidden md:flex space-x-6">
