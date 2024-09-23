@@ -1,26 +1,33 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    "target": "es5",                                  // Ensures compatibility with older browsers
+    "lib": ["dom", "dom.iterable", "esnext"],         // Standard libraries for a Next.js project
+    "allowJs": true,                                  // Allows JavaScript files to be compiled
+    "skipLibCheck": true,                             // Skips type checking of declaration files
+    "strict": true,                                   // Enables all strict type-checking options
+    "noEmit": true,                                   // Prevents the compiler from emitting files
+    "esModuleInterop": true,                          // Enables interoperability between CommonJS and ES Modules
+    "module": "esnext",                               // Uses the latest module system
+    "moduleResolution": "bundler",                    // Optimized for bundlers like webpack
+    "resolveJsonModule": true,                        // Allows importing JSON files
+    "isolatedModules": true,                          // Ensures each file can be safely transpiled without relying on other files
+    "jsx": "preserve",                                // Preserves JSX for Next.js to handle
+    "incremental": true,                              // Enables incremental compilation for faster builds
     "plugins": [
       {
-        "name": "next"
+        "name": "next"                                 // Integrates Next.js specific TypeScript configurations
       }
     ],
+    "baseUrl": ".",                                    // Base directory for resolving non-relative module names
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"]                               // Alias for cleaner imports
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",                                   // Next.js specific TypeScript definitions
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"                              // Includes generated types by Next.js
+  ],
+  "exclude": ["node_modules", "dist"]                  // Excludes unnecessary directories
 }

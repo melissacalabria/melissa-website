@@ -1,7 +1,8 @@
-// app/layout.tsx
+// src/app/layout.tsx
 import './globals.css';
 import Navbar from '../components/Navbar';
 import { Metadata } from 'next';
+import Head from 'next/head';
 
 export const metadata: Metadata = {
   title: 'My Awesome Town',
@@ -14,10 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-gray-100 text-gray-800">
+    <html lang="en" className="scroll-smooth">
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <body className="bg-background text-foreground transition-colors duration-300">
         <Navbar />
-        <main>{children}</main>
+        <main className="container mx-auto px-4 py-6">{children}</main>
       </body>
     </html>
   );
