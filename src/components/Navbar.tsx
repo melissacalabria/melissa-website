@@ -10,27 +10,37 @@ const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <nav className="bg-background shadow-md sticky top-0 z-50 transition-colors duration-300">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+    <nav className="bg-white shadow-md sticky top-0 z-50 transition-colors duration-300">
+      <div className="container mx-auto px-4 flex justify-between items-center h-20">
+        {/* Logo Section */}
         <Link href="/" className="flex items-center space-x-2">
           <Image
-            src="/images/Hero.jpg"
-            alt="Logo"
-            width={32}
-            height={32}
-            className="h-8 w-8 rounded-full"
+            src="/images/melissa_logo.png" // Ensure this path is correct
+            alt="Melissa Logo"
+            width={60}
+            height={60}
+            className="h-17 w-17 rounded-full"
           />
-          <span className="text-2xl font-bold text-primary">MyTown</span>
+          <span className="text-3xl font-bold text-primary">
+            ECHOES Melissa
+          </span>
         </Link>
-        <div className="hidden md:flex space-x-6">
+
+        {/* Desktop Navigation Links */}
+        <div className="hidden md:flex space-x-6 items-center">
           <NavLink href="/">Home</NavLink>
           <NavLink href="/about">About</NavLink>
+          <NavLink href="/recipes">Recipes</NavLink>
+          <NavLink href="/gallery">Gallery</NavLink> {/* Added Gallery link */}
         </div>
-        <div className="md:hidden">
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center">
           <button
             onClick={() => setNavOpen(!navOpen)}
             aria-label="Toggle Navigation"
-            className="focus:outline-none"
+            aria-expanded={navOpen}
+            className="focus:outline-none focus:ring-2 focus:ring-primary rounded"
           >
             {navOpen ? (
               <XMarkIcon className="h-6 w-6 text-primary" />
@@ -40,11 +50,15 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+
+      {/* Mobile Navigation Menu */}
       {navOpen && (
-        <div className="md:hidden bg-background shadow-md">
+        <div className="md:hidden bg-white shadow-md">
           <div className="flex flex-col space-y-2 px-4 py-4">
             <MobileNavLink href="/">Home</MobileNavLink>
             <MobileNavLink href="/about">About</MobileNavLink>
+            <MobileNavLink href="/recipes">Recipes</MobileNavLink>
+            <MobileNavLink href="/gallery">Gallery</MobileNavLink> {/* Added Gallery link */}
           </div>
         </div>
       )}
@@ -61,7 +75,7 @@ const NavLink = ({
 }) => (
   <Link
     href={href}
-    className="text-foreground hover:text-primary transition-colors duration-300"
+    className="text-gray-800 hover:text-primary transition-colors duration-300 flex items-center"
   >
     {children}
   </Link>
@@ -76,7 +90,11 @@ const MobileNavLink = ({
 }) => (
   <Link
     href={href}
-    className="text-foreground hover:text-primary transition-colors duration-300"
+    className="text-gray-800 hover:text-primary transition-colors duration-300 flex items-center"
+    onClick={() => {
+      // Optional: Close the mobile menu when a link is clicked
+      // This requires lifting the state up or using a context
+    }}
   >
     {children}
   </Link>

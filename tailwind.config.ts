@@ -3,9 +3,9 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
-    './src/app/**/*.{js,ts,jsx,tsx}',        // Include all files in the 'app' directory
+    './src/app/**/*.{js,ts,jsx,tsx}', // Include all files in the 'app' directory
     './src/components/**/*.{js,ts,jsx,tsx}', // Include all files in 'components'
-    './public/**/*.html',                     // Include HTML files in 'public' (if any)
+    './public/**/*.html', // Include HTML files in 'public' (if any)
   ],
   darkMode: 'media', // Enables dark mode based on user's system preference
   theme: {
